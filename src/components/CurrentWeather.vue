@@ -84,6 +84,7 @@ const props= defineProps({
   display:flex;
   align-items: center;
   justify-content: space-between;
+  margin:20px 0;
  }
  .item-title{
   font-size:10px;

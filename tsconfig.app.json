@@ -10,7 +10,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "module": "ESNext",
-    "types": ["src/types/**"]
+    "module": "EsNext",
+    "types": ["./src/types/**"]
   }
 }

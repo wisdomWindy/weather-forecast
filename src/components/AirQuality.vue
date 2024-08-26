@@ -6,39 +6,50 @@
 </template>
 
 <script setup lang="ts">
-import { ref,onMounted } from 'vue';
-import * as echarts from 'echarts';
+import { ref, onMounted } from 'vue'
+import * as echarts from 'echarts'
 
-const chartBox = ref(null);
+const chartBox = ref(null)
 const props = defineProps({
   airQualityData: {
     type: Object,
     default: () => ({})
   }
-});
+})
 
-onMounted(()=>{
-  const chart = echarts.init(chartBox.value);
+onMounted(() => {
+  const chart = echarts.init(chartBox.value)
   const options = {
-    series:[{
-      type:'gauge',
-      data:[{
-        name: props.airQualityData.now.category,
-        value: props.airQualityData.now.aqi
-      }],
-      detail:{
-        padding:10
-      },
-      axisLabel:{
-        show:false
-      },
-      axisTick:{
-        show:false
+    tooltip: {
+      show: true
+    },
+    series: [
+      {
+        type: 'gauge',
+        data: [
+          {
+            name: props.airQualityData.now.category,
+            value: props.airQualityData.now.aqi,
+            title: {
+              padding: [20, 0, 20, 0],
+              color: 'red'
+            }
+          }
+        ],
+        detail: {
+          padding: 10
+        },
+        axisLabel: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        }
       }
-    }]
-  };
-  chart.setOption(options);
-});
+    ]
+  }
+  chart.setOption(options)
+})
 </script>
 
 <style scoped lang="scss">
@@ -54,7 +65,7 @@ onMounted(()=>{
 .title {
   font-size: 16px;
 }
-.chart-box{
-  height:200px;
+.chart-box {
+  height: 174px;
 }
 </style>

@@ -58,6 +58,7 @@ const props = defineProps({
   width: 50px;
   height: 50px;
   margin-right:20px;
+  flex-shrink: 0;
 }
 
 .item-title {
