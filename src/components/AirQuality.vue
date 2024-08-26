@@ -32,7 +32,6 @@ onMounted(() => {
             value: props.airQualityData.now.aqi,
             title: {
               padding: [20, 0, 20, 0],
-              color: 'red'
             }
           }
         ],
